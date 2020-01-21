@@ -1,0 +1,11 @@
+{
+  "name": "cellarium",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {},
+  "engines": {
+    "node": ">=10.15.1",
+    "yarn": ">=1.13.0"
+  },
+  "devDependencies": {}
+}
