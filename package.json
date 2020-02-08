@@ -1,11 +1,42 @@
 {
   "name": "cellarium",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "scripts": {},
-  "engines": {
-    "node": ">=10.15.1",
-    "yarn": ">=1.13.0"
+  "scripts": {
+    "lint": "eslint \"./**/*.js\""
   },
-  "devDependencies": {}
+  "engines": {
+    "node": ">=12.0.0",
+    "yarn": ">=1.18.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn run lint --fix",
+      "git add ."
+    ],
+    "*.{js,json}": [
+      "prettier --write",
+      "git add ."
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.19.0",
+    "@typescript-eslint/parser": "^2.19.0",
+    "axios": "^0.18.0",
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-config-react-app": "^5.2.0",
+    "eslint-plugin-flowtype": "^3.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^1.2.0",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2",
+    "typescript": "^3.7.5"
+  }
 }

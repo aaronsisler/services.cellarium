@@ -1,1 +1,3 @@
 staging/
+.vscode/
+/node_modules

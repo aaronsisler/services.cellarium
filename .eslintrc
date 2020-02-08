@@ -1,0 +1,19 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "extends": ["react-app", "prettier"],
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 80
+      }
+    ]
+  },
+  "plugins": ["import", "prettier"]
+}
