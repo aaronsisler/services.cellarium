@@ -13,8 +13,9 @@ Loop over list and do correct action to load to S3
 const gitChangedFiles = require("git-changed-files");
 
 const getFiles = async () => {
-  const committedGitFiles = await gitChangedFiles();
-  console.log(committedGitFiles);
+  const { unCommittedFiles } = await gitChangedFiles();
+
+  console.log(unCommittedFiles);
 };
 
 getFiles();
