@@ -10,7 +10,3 @@ Check a list of all changed files
 Loop over list and do correct action to load to S3
     * All files should be public
 */
-
-let thing = "taco";
-
-return thing;
