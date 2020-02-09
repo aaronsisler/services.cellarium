@@ -3,7 +3,8 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "lint": "eslint \"./**/*.js\""
+    "lint": "eslint \"./**/*.js\"",
+    "upload": "node src/index.js"
   },
   "engines": {
     "node": ">=12.0.0",
@@ -19,7 +20,9 @@
       "git add ."
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "git-changed-files": "^1.0.0"
+  },
   "devDependencies": {
     "axios": "^0.18.0",
     "eslint": "^6.5.1",

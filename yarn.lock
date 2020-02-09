@@ -501,7 +501,7 @@ es-to-primitive@^1.2.1:
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
 
-escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
+escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.4, escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
@@ -854,6 +854,14 @@ get-stream@^5.0.0:
   integrity sha512-EXr1FOzrzTfGeL0gQdeFEvOMm2mzMOglyiOXSTpPC+iAjAKftbr3jpCMWynogwYnM+eSj9sHGc6wjIcDvYiygw==
   dependencies:
     pump "^3.0.0"
+
+git-changed-files@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/git-changed-files/-/git-changed-files-1.0.0.tgz#d79218fb94dc453dbd2492f95a1cb782251cf22d"
+  integrity sha512-nTwSAJRKZ1ztXaprexlnZgU9wUx0zwnS2sqy30HhSfSLx1MgbHK85ihRTOEHcnKjC3hc1jR1WYpjugjzFXrzMw==
+  dependencies:
+    chalk "^2.4.2"
+    matcher "^1.1.1"
 
 glob-parent@^5.0.0, glob-parent@^5.1.0:
   version "5.1.0"
@@ -1313,6 +1321,13 @@ log-update@^2.3.0:
     ansi-escapes "^3.0.0"
     cli-cursor "^2.0.0"
     wrap-ansi "^3.0.1"
+
+matcher@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/matcher/-/matcher-1.1.1.tgz#51d8301e138f840982b338b116bb0c09af62c1c2"
+  integrity sha512-+BmqxWIubKTRKNWx/ahnCkk3mG8m7OturVlqq6HiojGJTd5hVYbgZm6WzcYPCoB+KBT4Vd6R7WSRG2OADNaCjg==
+  dependencies:
+    escape-string-regexp "^1.0.4"
 
 merge-stream@^2.0.0:
   version "2.0.0"

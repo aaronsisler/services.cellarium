@@ -10,3 +10,11 @@ Check a list of all changed files
 Loop over list and do correct action to load to S3
     * All files should be public
 */
+const gitChangedFiles = require("git-changed-files");
+
+const getFiles = async () => {
+  const committedGitFiles = await gitChangedFiles();
+  console.log(committedGitFiles);
+};
+
+getFiles();

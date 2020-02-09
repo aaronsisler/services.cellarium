@@ -15,6 +15,7 @@
   },
   "rules": {
     "quotes": "off",
+    "arrow-parens": "off",
     "prettier/prettier": [
       "error",
       {
