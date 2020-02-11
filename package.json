@@ -1,11 +1,39 @@
 {
   "name": "cellarium",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "scripts": {},
-  "engines": {
-    "node": ">=10.15.1",
-    "yarn": ">=1.13.0"
+  "scripts": {
+    "lint": "eslint \"./**/*.js\"",
+    "submit": "node src/index.js"
   },
-  "devDependencies": {}
+  "engines": {
+    "node": ">=12.0.0",
+    "yarn": ">=1.18.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn run lint --fix",
+      "git add ."
+    ],
+    "*.{js,json}": [
+      "prettier --write",
+      "git add ."
+    ]
+  },
+  "dependencies": {
+    "aws-sdk": "^2.614.0",
+    "git-changed-files": "^1.0.0"
+  },
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2",
+    "typescript": "^3.7.5"
+  }
 }
