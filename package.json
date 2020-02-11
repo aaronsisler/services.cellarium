@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "lint": "eslint \"./**/*.js\"",
-    "upload": "node src/index.js"
+    "submit": "node src/index.js"
   },
   "engines": {
     "node": ">=12.0.0",
