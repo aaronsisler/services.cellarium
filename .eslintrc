@@ -16,6 +16,7 @@
   "rules": {
     "quotes": "off",
     "arrow-parens": "off",
+    "comma-dangle": "off",
     "prettier/prettier": [
       "error",
       {

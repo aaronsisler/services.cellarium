@@ -21,6 +21,7 @@
     ]
   },
   "dependencies": {
+    "aws-sdk": "^2.614.0",
     "git-changed-files": "^1.0.0"
   },
   "devDependencies": {
