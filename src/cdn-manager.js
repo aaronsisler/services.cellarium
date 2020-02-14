@@ -10,7 +10,12 @@ aws.config.update({ region });
 const modifyFile = async file => {
   const s3 = new aws.S3({ apiVersion: "2006-03-01" });
 
-  const client = path.dirname(file).split("/")[2];
+  const client = path
+    .dirname(file)
+    .split("/")
+    .slice(2)
+    .join("/");
+  // console.log(client);
   const fileName = path.basename(file);
   const fileKey = `${client}/${fileName}`;
 
@@ -21,8 +26,9 @@ const modifyFile = async file => {
 
   const uploadParams = { Bucket: bucketName, Key: fileKey, Body: fileStream };
 
+  // console.log(uploadParams);
   try {
-    await s3.upload(uploadParams);
+    await s3.upload(uploadParams).send();
     console.log("Upload Sucess: ", fileKey);
   } catch (error) {
     console.log(error.message);
