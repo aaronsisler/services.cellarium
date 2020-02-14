@@ -15,7 +15,6 @@ const modifyFile = async file => {
     .split("/")
     .slice(2)
     .join("/");
-  // console.log(client);
   const fileName = path.basename(file);
   const fileKey = `${client}/${fileName}`;
 
@@ -26,7 +25,6 @@ const modifyFile = async file => {
 
   const uploadParams = { Bucket: bucketName, Key: fileKey, Body: fileStream };
 
-  // console.log(uploadParams);
   try {
     await s3.upload(uploadParams).send();
     console.log("Upload Sucess: ", fileKey);
