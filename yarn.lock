@@ -287,6 +287,11 @@ chalk@^2.0.0, chalk@^2.1.0, chalk@^2.4.1, chalk@^2.4.2:
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
+changed-git-files@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/changed-git-files/-/changed-git-files-0.0.1.tgz#7b0ba5fb0dbcf104dd2884ea65b1bf24f034be44"
+  integrity sha1-ewul+w288QTdKITqZbG/JPA0vkQ=
+
 chardet@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"

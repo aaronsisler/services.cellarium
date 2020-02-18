@@ -5,15 +5,18 @@ const cdnManager = require("./cdn-manager");
 const submitChangedFilesToCDN = async () => {
   const changedFiles = await getChangedFiles();
 
-  changedFiles.forEach(async ({ filename, status }) => {
-    if (["modified", "added"].includes(status.toLowerCase())) {
-      await cdnManager.modifyFile(filename);
-    } else if (status.toLowerCase() === "deleted") {
-      await cdnManager.removeFile(filename);
-    } else {
-      console.log("File status not found", status, filename);
-    }
-  });
+  console.log(changedFiles);
+  // changedFiles.forEach(async ({ filename, status = "deleted" }) => {
+  //   console.log(filename);
+  //   console.log(status);
+  //   if (["modified", "added"].includes(status.toLowerCase())) {
+  //     // await cdnManager.modifyFile(filename);
+  //   } else if (status.toLowerCase() === "deleted") {
+  //     // await cdnManager.removeFile(filename);
+  //   } else {
+  //     console.log("File status not found", status, filename);
+  //   }
+  // });
 };
 
 submitChangedFilesToCDN();
