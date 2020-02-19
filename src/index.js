@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 const getChangedFiles = require("./get-changed-files");
-const cdnManager = require("./cdn-manager");
+// const cdnManager = require("./cdn-manager");
 
 const submitChangedFilesToCDN = async () => {
-  const changedFiles = await getChangedFiles();
+  const changedFiles = await getChangedFiles("./assets");
 
   console.log(changedFiles);
   // changedFiles.forEach(async ({ filename, status = "deleted" }) => {

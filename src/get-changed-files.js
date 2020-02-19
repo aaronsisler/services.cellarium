@@ -1,10 +1,3 @@
-const gitChangedFiles = require("git-changed-files");
+const gitChangedFiles = require("@ebsolutions/git-my-files");
 
-module.exports = async () => {
-  const { unCommittedFiles } = await gitChangedFiles({
-    formats: ["*.jpg"],
-    showStatus: true
-  });
-
-  return unCommittedFiles;
-};
+module.exports = folderPath => gitChangedFiles(folderPath);

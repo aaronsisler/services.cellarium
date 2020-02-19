@@ -21,8 +21,8 @@
     ]
   },
   "dependencies": {
-    "aws-sdk": "^2.614.0",
-    "git-changed-files": "^1.0.0"
+    "@ebsolutions/git-my-files": "^0.1.0",
+    "aws-sdk": "^2.614.0"
   },
   "devDependencies": {
     "axios": "^0.18.0",
