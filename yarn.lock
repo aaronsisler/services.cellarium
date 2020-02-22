@@ -18,10 +18,10 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@ebsolutions/git-my-files@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@ebsolutions/git-my-files/-/git-my-files-0.1.0.tgz#7f37e08aa1803bc94bed2db04520b11f61faaef7"
-  integrity sha512-WnbKOvOcLqIkm3OObIIi91yMmMoDe+y4+7QSzbet7gsQiAvHOzGSRUFG7LEDow7Zp2GXYtHESKhKvUQqoL+5uw==
+"@ebsolutions/git-my-files@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@ebsolutions/git-my-files/-/git-my-files-1.1.0.tgz#f8f7c3d49137e4696e31508f5ec3a6339c43bb7b"
+  integrity sha512-ic9KZiO8pvOipN7eekppYOHgCj2VxdaTHiHkynQIRc0ulLRInhraQ4KrV42FuPK1t8oIW4IM3F6ZrrxgsWH8Gw==
 
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
