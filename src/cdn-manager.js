@@ -23,7 +23,12 @@ const modifyFile = async file => {
     console.log("File Error", err);
   });
 
-  const uploadParams = { Bucket: bucketName, Key: fileKey, Body: fileStream };
+  const uploadParams = {
+    Bucket: bucketName,
+    Key: fileKey,
+    Body: fileStream,
+    ACL: "public-read"
+  };
 
   try {
     await s3.upload(uploadParams).send();
