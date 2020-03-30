@@ -32,10 +32,12 @@ const modifyFile = async file => {
 
   try {
     await s3.upload(uploadParams).send();
-    console.log("Upload Sucess: ", fileKey);
   } catch (error) {
     console.log(error.message);
+    return;
   }
+
+  console.log("Upload Sucess: ", fileKey);
 };
 
 const removeFile = async file => {
@@ -49,10 +51,12 @@ const removeFile = async file => {
 
   try {
     await s3.deleteObject(removeParams).promise();
-    console.log("Delete Sucess: ", fileKey);
   } catch (error) {
     console.log(error.message);
+    return;
   }
+
+  console.log("Delete Sucess: ", fileKey);
 };
 
 module.exports = { modifyFile, removeFile };
