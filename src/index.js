@@ -6,7 +6,7 @@ const submitChangedFilesToCDN = async () => {
   const changedFiles = getChangedFiles("./assets");
 
   changedFiles.forEach(async ({ filename, status = "deleted" }) => {
-    if (["modified", "added"].includes(status.toLowerCase())) {
+    if (["modified", "A"].includes(status.toUpperCase())) {
       await cdnManager.modifyFile(filename);
     } else if (status.toLowerCase() === "deleted") {
       await cdnManager.removeFile(filename);
