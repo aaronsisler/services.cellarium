@@ -8,7 +8,7 @@ const submitChangedFilesToCDN = async () => {
   changedFiles.forEach(async ({ filename, status = "deleted" }) => {
     if (["modified", "A"].includes(status.toUpperCase())) {
       await cdnManager.modifyFile(filename);
-    } else if (status.toLowerCase() === "deleted") {
+    } else if (status.toUpperCase() === "D") {
       await cdnManager.removeFile(filename);
     } else {
       console.log("File status not found", status, filename);
