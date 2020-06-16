@@ -4,10 +4,5 @@ This service is utilized by all E&B Solutions' deployed applications for CDN art
 
 ## Usage:
 
-You will need to create the `secrets.json` file in the root of the directory with the value shown below:
-
-```json
-{
-  "DOMAIN": "example.com"
-}
-```
+1. Update the path in `src/index.js` to which client's artifacts that need to be deployed.
+1. Run `yarn submit` to deploy artifacts.

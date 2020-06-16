@@ -1,11 +1,16 @@
 /* eslint-disable no-console */
 const getChangedFiles = require("./get-changed-files");
 const cdnManager = require("./cdn-manager");
+const ignoredFiles = require("./ignored-files");
 
 const submitChangedFilesToCDN = async () => {
-  const changedFiles = getChangedFiles("./assets");
+  const changedFiles = getChangedFiles("./assets/clients/name-here/");
 
   changedFiles.forEach(async ({ filename, status = "deleted" }) => {
+    if (ignoredFiles.find(ignoredFile => filename.includes(ignoredFile))) {
+      return;
+    }
+
     if (["modified", "A"].includes(status.toUpperCase())) {
       await cdnManager.modifyFile(filename);
     } else if (status.toUpperCase() === "D") {

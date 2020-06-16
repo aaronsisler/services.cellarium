@@ -17,6 +17,8 @@ const modifyFile = async file => {
     .join("/");
   const fileName = path.basename(file);
   const fileKey = `${client}/${fileName}`;
+  console.log(fileName);
+  console.log(fileKey);
 
   const fileStream = fs.createReadStream(file);
   fileStream.on("error", err => {
