@@ -17,8 +17,6 @@ const modifyFile = async file => {
     .join("/");
   const fileName = path.basename(file);
   const fileKey = `${client}/${fileName}`;
-  console.log(fileName);
-  console.log(fileKey);
 
   const fileStream = fs.createReadStream(file);
   fileStream.on("error", err => {
@@ -45,7 +43,11 @@ const modifyFile = async file => {
 const removeFile = async file => {
   const s3 = new aws.S3({ apiVersion: "2006-03-01" });
 
-  const client = path.dirname(file).split("/")[2];
+  const client = path
+    .dirname(file)
+    .split("/")
+    .slice(2)
+    .join("/");
   const fileName = path.basename(file);
   const fileKey = `${client}/${fileName}`;
 
