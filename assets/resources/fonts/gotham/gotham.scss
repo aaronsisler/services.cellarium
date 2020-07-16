@@ -1,0 +1,56 @@
+$GOTHAM_CDN: $FONTS_CDN + "/gotham";
+
+@font-face {
+  font-weight: bold;
+  font-family: "Gotham Bold";
+  font-style: italic;
+  src: url($GOTHAM_CDN+"/gotham-bold-italic.woff") format("woff");
+}
+
+@font-face {
+  font-weight: bold;
+  font-family: "Gotham Bold";
+  font-style: normal;
+  src: url($GOTHAM_CDN+"/gotham-bold.woff") format("woff"),
+    url($GOTHAM_CDN+"/gotham-bold.woff") format("woff2");
+}
+
+@font-face {
+  font-weight: normal;
+  font-family: "Gotham Regular";
+  font-style: italic;
+  src: url($GOTHAM_CDN+"/gotham-italic.woff") format("woff"),
+    url($GOTHAM_CDN+"/gotham-italic.woff") format("woff2");
+}
+
+@font-face {
+  font-weight: normal;
+  font-family: "Gotham Light";
+  font-style: italic;
+  src: url($GOTHAM_CDN+"/gotham-light-italic.woff") format("woff"),
+    url($GOTHAM_CDN+"/gotham-light-italic.woff") format("woff2");
+}
+
+@font-face {
+  font-weight: lighter;
+  font-family: "Gotham Light";
+  font-style: normal;
+  src: url($GOTHAM_CDN+"/gotham-light.woff") format("woff"),
+    url($GOTHAM_CDN+"/gotham-light.woff") format("woff2");
+}
+
+@font-face {
+  font-weight: 500;
+  font-family: "Gotham Medium";
+  font-style: normal;
+  src: url($GOTHAM_CDN+"/gotham-medium.woff") format("woff"),
+    url($GOTHAM_CDN+"/gotham-medium.woff") format("woff2");
+}
+
+@font-face {
+  font-weight: normal;
+  font-family: "Gotham Regular";
+  font-style: normal;
+  src: url($GOTHAM_CDN+"/gotham-regular.woff") format("woff"),
+    url($GOTHAM_CDN+"/gotham-regular.woff") format("woff2");
+}

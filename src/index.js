@@ -11,7 +11,7 @@ const submitChangedFilesToCDN = async () => {
       return;
     }
 
-    if (["modified", "A"].includes(status.toUpperCase())) {
+    if (["M", "A"].includes(status.toUpperCase())) {
       await cdnManager.modifyFile(filename);
     } else if (status.toUpperCase() === "D") {
       await cdnManager.removeFile(filename);

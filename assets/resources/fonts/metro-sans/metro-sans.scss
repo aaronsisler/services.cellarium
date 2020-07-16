@@ -1,0 +1,33 @@
+$METRO_SANS_CDN: $FONTS_CDN + "/metro-sans";
+
+@font-face {
+  font-weight: bold;
+  font-family: "Metro Sans Bold";
+  font-style: normal;
+  src: url($METRO_SANS_CDN+"/gotham-bold.woff") format("woff"),
+    url($METRO_SANS_CDN+"/gotham-bold.woff") format("woff2");
+}
+
+@font-face {
+  font-weight: normal;
+  font-family: "Metro Sans Regular";
+  font-style: normal;
+  src: url($METRO_SANS_CDN+"/metro-sans-regular.woff") format("woff"),
+    url($METRO_SANS_CDN+"/metro-sans-regular.woff") format("woff2");
+}
+
+@font-face {
+  font-weight: lighter;
+  font-family: "Metro Sans Book";
+  font-style: normal;
+  src: url($METRO_SANS_CDN+"/metro-sans-book.woff") format("woff"),
+    url($METRO_SANS_CDN+"/metro-sans-book.woff") format("woff2");
+}
+
+@font-face {
+  font-weight: 500;
+  font-family: "Gotham Semi Bold";
+  font-style: normal;
+  src: url($METRO_SANS_CDN+"/metro-sans-semi-bold.woff") format("woff"),
+    url($METRO_SANS_CDN+"/metro-sans-semi-bold.woff") format("woff2");
+}
