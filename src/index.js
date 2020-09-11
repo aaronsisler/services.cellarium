@@ -4,7 +4,7 @@ const cdnManager = require("./cdn-manager");
 const ignoredFiles = require("./ignored-files");
 
 const submitChangedFilesToCDN = async () => {
-  const changedFiles = getChangedFiles("./assets/clients/waterbrooke");
+  const changedFiles = getChangedFiles("./assets/clients/hunter-hill/");
 
   changedFiles.forEach(async ({ filename, status = "deleted" }) => {
     if (ignoredFiles.find(ignoredFile => filename.includes(ignoredFile))) {
