@@ -10,11 +10,10 @@
     "node": ">=12.0.0"
   },
   "dependencies": {
-    "@ebsolutions/git-my-files": "^1.1.0",
+    "@ebsolutions/git-my-files": "^1.1.4",
     "aws-sdk": "^2.614.0"
   },
   "devDependencies": {
-    "axios": "^0.18.0",
     "eslint": "^6.5.1",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.4.0",
