@@ -5,7 +5,7 @@ $UBUNTU_CDN: $FONTS_CDN + "/ubuntu";
   font-family: "Ubuntu Light";
   font-style: normal;
   src: url($UBUNTU_CDN+"/ubuntu-light.woff") format("woff"),
-    url($UBUNTU_CDN+"/ubuntu-light.woff") format("woff2");
+    url($UBUNTU_CDN+"/ubuntu-light.woff2") format("woff2");
 }
 
 @font-face {
@@ -13,5 +13,5 @@ $UBUNTU_CDN: $FONTS_CDN + "/ubuntu";
   font-family: "Ubuntu Regular";
   font-style: normal;
   src: url($UBUNTU_CDN+"/ubuntu-regular.woff") format("woff"),
-    url($UBUNTU_CDN+"/ubuntu-regular.woff") format("woff2");
+    url($UBUNTU_CDN+"/ubuntu-regular.woff2") format("woff2");
 }
