@@ -7,7 +7,7 @@ const region = "us-east-1";
 const bucketName = "cdn-e-and-b-solutions";
 aws.config.update({ region });
 
-const modifyFile = async file => {
+const upsertFile = async file => {
   const s3 = new aws.S3({ apiVersion: "2006-03-01" });
 
   const client = path
@@ -63,4 +63,4 @@ const removeFile = async file => {
   console.log("Delete Sucess: ", fileKey);
 };
 
-module.exports = { modifyFile, removeFile };
+module.exports = { removeFile, upsertFile };

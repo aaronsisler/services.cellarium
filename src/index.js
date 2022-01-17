@@ -1,45 +1,44 @@
 /* eslint-disable no-console */
-const getChangedFiles = require("./get-changed-files");
-const cdnManager = require("./cdn-manager");
-const ignoredFiles = require("./ignored-files");
+const { program } = require("commander");
+const { submitFilesToCdn } = require("./submit-files-to-cdn");
+const {
+  getChangedFiles,
+  grabDirectoryFiles,
+  removeIgnoredFiles,
+  validateArgs
+} = require("./utils");
 
-const submitChangedFilesToCDN = async () => {
-  const changedFiles = getChangedFiles("./assets/clients/");
+const rootPromise = async () => {
+  program
+    .option("-p, --processDirectory")
+    .option("-c, --client <type>", "Add the specified client");
 
-  changedFiles.forEach(async ({ filename, status = "deleted" }) => {
-    if (ignoredFiles.find(ignoredFile => filename.includes(ignoredFile))) {
-      return;
-    }
+  program.parse(process.argv);
 
-    if (["M", "A"].includes(status.toUpperCase())) {
-      await cdnManager.modifyFile(filename);
-    } else if (status.toUpperCase() === "D") {
-      await cdnManager.removeFile(filename);
-    } else {
-      console.log("File status not found", status, filename);
-    }
-  });
+  const {
+    client,
+    processDirectory: shouldProcessDirectory = false
+  } = program.opts();
+  validateArgs({ client, shouldProcessDirectory });
+
+  let rawFiles;
+  if (shouldProcessDirectory) {
+    rawFiles = grabDirectoryFiles(`./assets/clients/${client}/`);
+  } else {
+    rawFiles = getChangedFiles(`./assets/clients/${client}/`);
+  }
+  const submittedFiles = removeIgnoredFiles(rawFiles);
+  console.log(submittedFiles);
+
+  await submitFilesToCdn(submittedFiles);
 };
 
-submitChangedFilesToCDN();
-
-// Use below when accidentally committed files already
-// Update the committed-files.js file
-/*
-
-const committedFiles = require("./committed-files");
-
-const submitCommittedFilesToCDN = async () => {
-  committedFiles.forEach(async ({ filename, status }) => {
-    if (["modified", "added"].includes(status.toLowerCase())) {
-      await cdnManager.modifyFile(filename);
-    } else if (status.toLowerCase() === "deleted") {
-      await cdnManager.removeFile(filename);
-    } else {
-      console.log("File status not found", status, filename);
-    }
-  });
+const rootMethod = async () => {
+  try {
+    await rootPromise();
+  } catch (e) {
+    // Deal with the fact the chain failed
+  }
 };
 
-// submitCommittedFilesToCDN();
-*/
+module.exports = rootMethod();
