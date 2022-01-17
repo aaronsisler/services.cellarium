@@ -28,7 +28,6 @@ const rootPromise = async () => {
     rawFiles = getChangedFiles(`./assets/clients/${client}/`);
   }
   const submittedFiles = removeIgnoredFiles(rawFiles);
-  console.log(submittedFiles);
 
   await submitFilesToCdn(submittedFiles);
 };
