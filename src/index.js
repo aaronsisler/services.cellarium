@@ -23,9 +23,9 @@ const rootPromise = async () => {
 
   let rawFiles;
   if (shouldProcessDirectory) {
-    rawFiles = grabDirectoryFiles(`./assets/clients/${client}/`);
+    rawFiles = grabDirectoryFiles(`assets/clients/${client}/`);
   } else {
-    rawFiles = getChangedFiles(`./assets/clients/${client}/`);
+    rawFiles = getChangedFiles(`assets/clients/${client}/`);
   }
   const submittedFiles = removeIgnoredFiles(rawFiles);
 
