@@ -4,14 +4,16 @@
   "private": true,
   "scripts": {
     "lint": "eslint \"./**/*.js\"",
-    "publish": "node src/index.js"
+    "publish:dir": "node src/index.js --processDirectory",
+    "publish:delta": "node src/index.js"
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=14.0.0"
   },
   "dependencies": {
     "@ebsolutions/git-my-files": "^1.1.4",
-    "aws-sdk": "^2.614.0"
+    "aws-sdk": "^2.1061.0",
+    "commander": "^8.3.0"
   },
   "devDependencies": {
     "eslint": "^6.5.1",
