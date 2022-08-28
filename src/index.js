@@ -8,26 +8,43 @@ const {
   validateArgs
 } = require("./utils");
 
+const chooseTheType = (method, client, font) => {
+  if (client) {
+    return method(`assets/clients/${client}/`);
+  }
+
+  if (font) {
+    return method(`assets/resources/fonts/${font}/`);
+  }
+
+  return [];
+};
+
 const rootPromise = async () => {
   program
     .option("-p, --processDirectory")
-    .option("-c, --client <type>", "Add the specified client");
+    .option("-c, --client <type>", "Add the specified client")
+    .option("-f, --font <type>", "Add to fonts");
 
   program.parse(process.argv);
 
   const {
     client,
+    font,
     processDirectory: shouldProcessDirectory = false
   } = program.opts();
-  validateArgs({ client, shouldProcessDirectory });
+  validateArgs({ client, font, shouldProcessDirectory });
 
   let rawFiles;
   if (shouldProcessDirectory) {
-    rawFiles = grabDirectoryFiles(`assets/clients/${client}/`);
+    rawFiles = chooseTheType(grabDirectoryFiles, client, font);
   } else {
-    rawFiles = getChangedFiles(`assets/clients/${client}/`);
+    rawFiles = chooseTheType(getChangedFiles, client, font);
   }
+
   const submittedFiles = removeIgnoredFiles(rawFiles);
+
+  console.log(submittedFiles);
 
   await submitFilesToCdn(submittedFiles);
 };

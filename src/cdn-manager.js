@@ -13,7 +13,7 @@ const upsertFile = async file => {
   const client = path
     .dirname(file)
     .split("/")
-    .slice(2)
+    .slice(1)
     .join("/");
   const fileName = path.basename(file);
   const fileKey = `${client}/${fileName}`;

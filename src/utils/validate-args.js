@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 
-const validateArgs = ({ client, shouldProcessDirectory }) => {
+const validateArgs = ({ client, font, shouldProcessDirectory }) => {
   const validTypes = [true, false];
 
   if (shouldProcessDirectory === undefined) {
@@ -17,29 +17,56 @@ const validateArgs = ({ client, shouldProcessDirectory }) => {
     process.exit(1);
   }
 
-  if (client === undefined) {
+  if (client === undefined && font === undefined) {
     console.log(
-      "'client' is required\ni.e. --client=e-and-b-solutions (2 dashes)"
+      "'client' or 'font' is required\ni.e. --client=e-and-b-solutions (2 dashes)"
     );
     process.exit(1);
   }
 
-  if (client.length === 0) {
-    console.log("'client' must be populated");
-    console.log("client: ", client);
+  if (client !== undefined && font !== undefined) {
+    console.log("Only 'client' and 'font' may be provided, not both");
     process.exit(1);
   }
 
-  if (client.includes("clients")) {
-    console.log("'clients' is not needed in base path");
-    console.log("client: ", client);
-    process.exit(1);
+  if (client) {
+    if (client.length === 0) {
+      console.log("'client' must be populated");
+      console.log("client: ", client);
+      process.exit(1);
+    }
+
+    if (client.includes("clients")) {
+      console.log("'clients' is not needed in base path");
+      console.log("client: ", client);
+      process.exit(1);
+    }
+
+    if (client.includes("/")) {
+      console.log("Slashes should not be in 'client'");
+      console.log("client: ", client);
+      process.exit(1);
+    }
   }
 
-  if (client.includes("/")) {
-    console.log("Slashes should not be in 'client'");
-    console.log("client: ", client);
-    process.exit(1);
+  if (font) {
+    if (font.length === 0) {
+      console.log("'font' must be populated");
+      console.log("font: ", font);
+      process.exit(1);
+    }
+
+    if (font.includes("fonts")) {
+      console.log("'fonts' is not needed in base path");
+      console.log("font: ", font);
+      process.exit(1);
+    }
+
+    if (font.includes("/")) {
+      console.log("Slashes should not be in 'font'");
+      console.log("font: ", font);
+      process.exit(1);
+    }
   }
 };
 
