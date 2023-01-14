@@ -1,19 +1,15 @@
 /* eslint-disable no-console */
 
-const validateArgs = ({ client, font, shouldProcessDirectory }) => {
+const validateArgs = ({ client, font, processDirectory }) => {
   const validTypes = [true, false];
 
-  if (shouldProcessDirectory === undefined) {
-    console.log(
-      "'shouldProcessDirectory' is required\nShould be true or false"
-    );
+  if (processDirectory === undefined) {
+    console.log("'processDirectory' is required\nShould be true or false");
     process.exit(1);
   }
 
-  if (!validTypes.includes(shouldProcessDirectory)) {
-    console.log(
-      "'shouldProcessDirectory' is required\nShould be true or false"
-    );
+  if (!validTypes.includes(processDirectory)) {
+    console.log("'processDirectory' is required\nShould be true or false");
     process.exit(1);
   }
 
