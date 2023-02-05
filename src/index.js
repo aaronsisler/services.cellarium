@@ -28,15 +28,11 @@ const rootPromise = async () => {
 
   program.parse(process.argv);
 
-  const {
-    client,
-    font,
-    processDirectory: shouldProcessDirectory = false
-  } = program.opts();
-  validateArgs({ client, font, shouldProcessDirectory });
+  const { client, font, processDirectory = false } = program.opts();
+  validateArgs({ client, font, processDirectory });
 
   let rawFiles;
-  if (shouldProcessDirectory) {
+  if (processDirectory) {
     rawFiles = chooseTheType(grabDirectoryFiles, client, font);
   } else {
     rawFiles = chooseTheType(getChangedFiles, client, font);
